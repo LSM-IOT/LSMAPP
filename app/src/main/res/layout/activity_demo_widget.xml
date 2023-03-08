@@ -57,7 +57,6 @@
             android:layout_height="wrap_content"
             android:hint="EditView 控件" />
 
-
         <CheckBox
             android:id="@+id/cb_demo_widget_1"
             android:layout_width="match_parent"
@@ -97,6 +96,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="下拉框向下" />
+
+        <Spinner
+            android:id="@+id/sp_dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="下拉框 对话框" />
+
+        <Spinner
+            android:id="@+id/sp_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dialog" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
