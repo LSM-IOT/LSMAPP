@@ -1,0 +1,13 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+// AndServer 服务器相关 START
+buildscript {
+    dependencies {
+        classpath 'com.yanzhenjie.andserver:plugin:2.1.11'
+    }
+}
+// AndServer 服务器相关 END
+plugins {
+    id 'com.android.application' version '7.4.2' apply false
+    id 'com.android.library' version '7.4.2' apply false
+}
+

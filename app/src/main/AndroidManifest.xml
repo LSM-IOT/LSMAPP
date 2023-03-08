@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 获取网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 外部SD读写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LSMAPP"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity android:name=".demo.layout.DemoLayoutIndexActivity" /> <!-- 布局案例 -->
+        <activity android:name=".demo.layout.DemoLayoutLinearLayoutActivity" /> <!-- 布局案例 线性布局-->
+        <activity android:name=".demo.layout.DemoLayoutRelativeLayoutActivity" /> <!-- 布局案例 相对布局-->
+        <activity android:name=".demo.widget.DemoWidgetActivity" /> <!-- 控件案例 基础控件 -->
+        <activity
+            android:name=".demo.service.DemoServiceActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity><!-- 测试 服务 Activity -->
+        <activity android:name=".demo.webview.DemoWebViewActivity" /> <!-- 测试 WebView Activity -->
+        <activity android:name=".demo.file.DemoFileActivity" /><!-- 测试 File Activity -->
+        <activity android:name=".demo.andserver.DemoAndServerActivity" /><!-- 测试 AndServer Activity -->
+        <activity android:name=".demo.broadcast.DemoBroadcastActivity" /><!-- 测试 Broadcast Activity -->
+        <service android:name=".demo.service.MyService" /> <!-- 注册 Service -->
+        <service android:name=".demo.andserver.DemoAndServerService" /> <!-- AndServer Service -->
+    </application>
+
+</manifest>
