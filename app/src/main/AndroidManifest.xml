@@ -47,6 +47,7 @@
         <activity android:name=".demo.file.DemoFileActivity" /><!-- 测试 File Activity -->
         <activity android:name=".demo.andserver.DemoAndServerActivity" /><!-- 测试 AndServer Activity -->
         <activity android:name=".demo.broadcast.DemoBroadcastActivity" /><!-- 测试 Broadcast Activity -->
+        <activity android:name=".demo.dialog.DemoDialogActivity" /><!-- 测试 Dialog Activity -->
         <service android:name=".demo.service.MyService" /> <!-- 注册 Service -->
         <service android:name=".demo.andserver.DemoAndServerService" /> <!-- AndServer Service -->
     </application>
