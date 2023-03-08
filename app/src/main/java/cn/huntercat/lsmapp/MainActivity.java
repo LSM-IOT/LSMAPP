@@ -10,6 +10,7 @@ import cn.huntercat.lsmapp.demo.andserver.DemoAndServerActivity;
 import cn.huntercat.lsmapp.demo.broadcast.DemoBroadcastActivity;
 import cn.huntercat.lsmapp.demo.dialog.DemoDialogActivity;
 import cn.huntercat.lsmapp.demo.file.DemoFileActivity;
+import cn.huntercat.lsmapp.demo.fragment.DemoFragmentActivity;
 import cn.huntercat.lsmapp.demo.layout.DemoLayoutIndexActivity;
 import cn.huntercat.lsmapp.demo.service.DemoServiceActivity;
 import cn.huntercat.lsmapp.demo.webview.DemoWebViewActivity;
@@ -42,9 +43,12 @@ public class MainActivity extends AppCompatActivity {
         // Demo 测试 Broadcast
         Button btnBroadcast = findViewById(R.id.btn_demo_broadcast);
         btnBroadcast.setOnClickListener(v -> startActivity(new Intent(this, DemoBroadcastActivity.class)));
-        // Demo 测试 Broadcast
+        // Demo 测试 broadcast
         Button btnDialog = findViewById(R.id.btn_demo_dialog);
         btnDialog.setOnClickListener(v -> startActivity(new Intent(this, DemoDialogActivity.class)));
+        // Demo 测试 fragment
+        Button btnFragment = findViewById(R.id.btn_demo_fragment);
+        btnFragment.setOnClickListener(v -> startActivity(new Intent(this, DemoFragmentActivity.class)));
 
     }
 }

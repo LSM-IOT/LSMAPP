@@ -67,9 +67,10 @@
                 android:text="测试案例 对话框 Dialog" />
 
             <Button
+                android:id="@+id/btn_demo_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="按钮" />
+                android:text="测试案例 碎片 Fragment" />
 
             <Button
                 android:layout_width="match_parent"

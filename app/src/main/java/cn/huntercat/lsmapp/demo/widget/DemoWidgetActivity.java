@@ -111,6 +111,10 @@ public class DemoWidgetActivity extends AppCompatActivity {
         });
 
         // BaseAdapter
+        // ListView
+
+
+
 
     }
 }
