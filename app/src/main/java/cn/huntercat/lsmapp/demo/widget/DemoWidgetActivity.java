@@ -112,7 +112,23 @@ public class DemoWidgetActivity extends AppCompatActivity {
 
         // BaseAdapter
         // ListView
+        List<Planet> planetList = Planet.getDefaultList();
+        MyBaseAdapter myBaseAdapter = new MyBaseAdapter(this, planetList);
+        Spinner spDropdown2 = findViewById(R.id.sp_dropdown_2);
+        spDropdown2.setPrompt("请选择行星");
+        spDropdown2.setAdapter(myBaseAdapter);
+        spDropdown2.setSelection(0);
+        spDropdown2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(DemoWidgetActivity.this, "您选择的是" + starArray[position], Toast.LENGTH_SHORT).show();
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 
 

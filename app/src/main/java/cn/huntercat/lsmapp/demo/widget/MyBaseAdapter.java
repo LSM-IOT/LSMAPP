@@ -1,9 +1,16 @@
 package cn.huntercat.lsmapp.demo.widget;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.List;
+
+import cn.huntercat.lsmapp.R;
 
 /**
  * 自定义适配器
@@ -11,6 +18,12 @@ import android.widget.BaseAdapter;
 public class MyBaseAdapter extends BaseAdapter {
 
     private Context context; // 声明一个上下文对象
+    private List<Planet> planetList;
+
+    public MyBaseAdapter(Context context, List<Planet> planetList) {
+        this.context = context;
+        this.planetList = planetList;
+    }
 
     /**
      * 获取列表项个数
@@ -19,7 +32,7 @@ public class MyBaseAdapter extends BaseAdapter {
      */
     @Override
     public int getCount() {
-        return 0;
+        return planetList.size();
     }
 
     /**
@@ -31,7 +44,7 @@ public class MyBaseAdapter extends BaseAdapter {
      */
     @Override
     public Object getItem(int position) {
-        return null;
+        return planetList.get(position);
     }
 
     /**
@@ -42,7 +55,7 @@ public class MyBaseAdapter extends BaseAdapter {
      */
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     /**
@@ -61,6 +74,29 @@ public class MyBaseAdapter extends BaseAdapter {
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        ViewHolder holder;
+        if (convertView == null) {
+            holder = new ViewHolder();
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_list, null);
+            holder.ivIconItemList = convertView.findViewById(R.id.iv_icon_item_list);
+            holder.tvNameItemList = convertView.findViewById(R.id.tv_name_item_list);
+            holder.tvDescItemList = convertView.findViewById(R.id.tv_desc_item_list);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
+        Planet planet = planetList.get(position);
+        holder.ivIconItemList.setImageResource(planet.image);
+        holder.tvNameItemList.setText(planet.name);
+        holder.tvDescItemList.setText(planet.desc);
+        return convertView;
     }
+
+    public final class ViewHolder {
+        public ImageView ivIconItemList;
+        public TextView tvNameItemList;
+        public TextView tvDescItemList;
+    }
+
+
 }
