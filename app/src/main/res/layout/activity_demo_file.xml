@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="文件案例" />
+
+    <Button
+        android:id="@+id/btn_demo_file_find"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="文件目录查询" />
+
+    <Button
+        android:id="@+id/btn_demo_file_write_private"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="写入私有目录" />
+</LinearLayout>

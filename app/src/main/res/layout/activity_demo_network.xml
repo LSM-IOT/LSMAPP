@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".demo.network.DemoNetworkActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试案例 网络通信" />
+
+
+    <Button
+        android:id="@+id/btn_demo_network_thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="多线程" />
+
+    <Button
+        android:id="@+id/btn_demo_network_okhttp_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OkHttp Get" />
+
+    <TextView
+        android:id="@+id/tv_demo_network_okhttp_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="网络请求内容" />
+
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

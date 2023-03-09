@@ -5,9 +5,8 @@
     <!-- 获取网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 外部SD读写权限 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+    <!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
 
     <application
         android:allowBackup="true"
@@ -18,6 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LSMAPP"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
@@ -52,6 +52,7 @@
         <activity android:name=".demo.fragment.DemoFragmentDynamicActivity" /><!-- 测试 Fragment Dynamic Activity -->
         <activity android:name=".demo.fragment.DemoFragmentStaticActivity" /><!-- 测试 Fragment Static Activity -->
         <activity android:name=".demo.viewpager.DemoViewPagerActivity" /><!-- 测试 ViewPager Activity -->
+        <activity android:name=".demo.network.DemoNetworkActivity" /><!-- 测试 Network Activity -->
         <service android:name=".demo.service.MyService" /> <!-- 注册 Service -->
         <service android:name=".demo.andserver.DemoAndServerService" /> <!-- AndServer Service -->
     </application>

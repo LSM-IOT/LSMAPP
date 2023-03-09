@@ -16,7 +16,8 @@ public class DemoAndServerWebConfig implements WebConfig {
     @Override
     public void onConfig(Context context, Delegate delegate) {
 
-        File file = new File(Environment.getExternalStorageDirectory(), "www");
+//        File file = new File(Environment.getExternalStorageDirectory(), "www");
+        File file = new File(context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString());
         String websiteDirectory = file.getAbsolutePath();
 
         Website wesite = new StorageWebsite(websiteDirectory);
