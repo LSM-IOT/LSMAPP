@@ -51,6 +51,7 @@
         <activity android:name=".demo.fragment.DemoFragmentActivity" /><!-- 测试 Fragment Activity -->
         <activity android:name=".demo.fragment.DemoFragmentDynamicActivity" /><!-- 测试 Fragment Dynamic Activity -->
         <activity android:name=".demo.fragment.DemoFragmentStaticActivity" /><!-- 测试 Fragment Static Activity -->
+        <activity android:name=".demo.viewpager.DemoViewPagerActivity" /><!-- 测试 ViewPager Activity -->
         <service android:name=".demo.service.MyService" /> <!-- 注册 Service -->
         <service android:name=".demo.andserver.DemoAndServerService" /> <!-- AndServer Service -->
     </application>

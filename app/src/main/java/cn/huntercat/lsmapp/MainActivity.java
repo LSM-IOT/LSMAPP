@@ -13,6 +13,7 @@ import cn.huntercat.lsmapp.demo.file.DemoFileActivity;
 import cn.huntercat.lsmapp.demo.fragment.DemoFragmentActivity;
 import cn.huntercat.lsmapp.demo.layout.DemoLayoutIndexActivity;
 import cn.huntercat.lsmapp.demo.service.DemoServiceActivity;
+import cn.huntercat.lsmapp.demo.viewpager.DemoViewPagerActivity;
 import cn.huntercat.lsmapp.demo.webview.DemoWebViewActivity;
 import cn.huntercat.lsmapp.demo.widget.DemoWidgetActivity;
 
@@ -49,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
         // Demo 测试 fragment
         Button btnFragment = findViewById(R.id.btn_demo_fragment);
         btnFragment.setOnClickListener(v -> startActivity(new Intent(this, DemoFragmentActivity.class)));
+        // Demo 测试 view pager
+        Button btnViewpager = findViewById(R.id.btn_demo_viewpager);
+        btnViewpager.setOnClickListener(v -> startActivity(new Intent(this, DemoViewPagerActivity.class)));
 
     }
 }
