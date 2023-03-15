@@ -1,22 +1,20 @@
 package cn.huntercat.lsmapp.demo.file;
 
-import android.Manifest;
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
+import java.io.PrintWriter;
 
 import cn.huntercat.lsmapp.R;
 
@@ -56,6 +54,7 @@ public class DemoFileActivity extends AppCompatActivity {
             String text = "测试内容";
             try (FileOutputStream fileOutputStream = new FileOutputStream(newFile)) {
                 fileOutputStream.write(text.getBytes());
+                Log.i(TAG, "写入地址：" + newFile.getAbsolutePath());
                 Log.i(TAG, "写入成功");
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -63,32 +62,25 @@ public class DemoFileActivity extends AppCompatActivity {
         });
     }
 
-    private void test() {
-        String[] PERMISSIONS = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
-        int PERMISSION_CODE = 123;
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
-            if (ActivityCompat.checkSelfPermission(DemoFileActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(DemoFileActivity.this, PERMISSIONS, PERMISSION_CODE);
-            }
-        }
-        File myFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/www");
-        // 创建文件夹
-        if (!myFile.isDirectory()) {
-            myFile.mkdir();
-        }
-        // 创建文件
-        File tempFile = new File(myFile.getAbsolutePath() + "/index.html");
-        if (tempFile.exists()) {
-            tempFile.delete();
-        }
+
+    public void updateApk(View view) {
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream(tempFile);
-            String content = "" + "<html><head><meta charset=\"utf-8\"></head><body>" + "<h1>这是我的安卓服务器缓存的网页</h1>" + "<video src=\"video.mp4\" controls></video>" + "<body></html>";
-            fileOutputStream.write(content.getBytes(StandardCharsets.UTF_8));
-            fileOutputStream.close();
-            tempFile.createNewFile();
+            Process process = Runtime.getRuntime().exec("su");
+            PrintWriter printWriter = new PrintWriter(process.getOutputStream());
+            printWriter.println("pm install -r /storage/emulated/0/Android/data/app-debug.apk");
+            printWriter.flush();
+            printWriter.close();
+            Process process2 = Runtime.getRuntime().exec("su");
+            DataOutputStream dataOutputStream = new DataOutputStream(process2.getOutputStream());
+            dataOutputStream.writeBytes("sleep 1; am start cn.huntercat.lsmapp/.MainActivity");
+            dataOutputStream.flush();
+            process.waitFor();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
+
     }
+
 }
