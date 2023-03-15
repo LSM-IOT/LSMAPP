@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import cn.huntercat.lsmapp.demo.andserver.DemoAndServerActivity;
 import cn.huntercat.lsmapp.demo.broadcast.DemoBroadcastActivity;
+import cn.huntercat.lsmapp.demo.customview.DemoCustomViewActivity;
 import cn.huntercat.lsmapp.demo.dialog.DemoDialogActivity;
 import cn.huntercat.lsmapp.demo.file.DemoFileActivity;
 import cn.huntercat.lsmapp.demo.fragment.DemoFragmentActivity;
@@ -57,5 +58,8 @@ public class MainActivity extends AppCompatActivity {
         // Demo 测试 view pager
         Button btnNetwork = findViewById(R.id.btn_demo_network);
         btnNetwork.setOnClickListener(v -> startActivity(new Intent(this, DemoNetworkActivity.class)));
+        // Demo 测试 自定义View
+        Button btnCustomView = findViewById(R.id.btn_demo_custom_view);
+        btnCustomView.setOnClickListener(v -> startActivity(new Intent(this, DemoCustomViewActivity.class)));
     }
 }

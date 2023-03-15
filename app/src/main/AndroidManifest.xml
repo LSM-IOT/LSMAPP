@@ -53,6 +53,8 @@
         <activity android:name=".demo.fragment.DemoFragmentStaticActivity" /><!-- 测试 Fragment Static Activity -->
         <activity android:name=".demo.viewpager.DemoViewPagerActivity" /><!-- 测试 ViewPager Activity -->
         <activity android:name=".demo.network.DemoNetworkActivity" /><!-- 测试 Network Activity -->
+        <activity android:name=".demo.layout.DemoLayoutGridLayoutActivity" /><!-- 测试 Grid Layout Activity -->
+        <activity android:name=".demo.customview.DemoCustomViewActivity" /><!-- 测试 Custom View Activity -->
         <service android:name=".demo.service.MyService" /> <!-- 注册 Service -->
         <service android:name=".demo.andserver.DemoAndServerService" /> <!-- AndServer Service -->
     </application>

@@ -31,6 +31,12 @@
                 android:text="UI基础控件" />
 
             <Button
+                android:id="@+id/btn_demo_custom_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义View" />
+
+            <Button
                 android:id="@+id/btn_demo_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

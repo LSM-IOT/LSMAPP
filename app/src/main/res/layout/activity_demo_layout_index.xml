@@ -39,6 +39,7 @@
                 android:text="相对布局 RelativeLayout" />
 
             <Button
+                android:id="@+id/btn_layout_gridlayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="网格布局 GridLayout" />
@@ -46,9 +47,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="网格布局默认从左往右、从上到下排列，它先从第一行从左往右放置下级视图，如此循环往复直至所有下级视图都放置完毕。"
-
-                />
+                android:text="网格布局默认从左往右、从上到下排列，它先从第一行从左往右放置下级视图，如此循环往复直至所有下级视图都放置完毕。" />
 
             <GridLayout
                 android:layout_width="match_parent"

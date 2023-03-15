@@ -24,6 +24,9 @@ public class DemoLayoutIndexActivity extends AppCompatActivity {
         Button btnLayoutRelativeLayout = findViewById(R.id.btn_layout_relativelayout);
         btnLayoutRelativeLayout.setOnClickListener(v -> startActivity(
                 new Intent(this, DemoLayoutRelativeLayoutActivity.class)));
+        Button btnGridLayout = findViewById(R.id.btn_layout_gridlayout);
+        btnGridLayout.setOnClickListener(v -> startActivity(
+                new Intent(this, DemoLayoutGridLayoutActivity.class)));
 
     }
 }
