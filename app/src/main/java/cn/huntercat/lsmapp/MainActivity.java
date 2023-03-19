@@ -2,8 +2,12 @@ package cn.huntercat.lsmapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import cn.huntercat.lsmapp.demo.andserver.DemoAndServerActivity;
@@ -61,5 +65,34 @@ public class MainActivity extends AppCompatActivity {
         // Demo 测试 自定义View
         Button btnCustomView = findViewById(R.id.btn_demo_custom_view);
         btnCustomView.setOnClickListener(v -> startActivity(new Intent(this, DemoCustomViewActivity.class)));
+    }
+
+    /**
+     * 创建 Option Menu
+     *
+     * @param menu
+     * @return
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // 将菜单资源，加载进来
+        getMenuInflater().inflate(R.menu.option, menu);
+        return true;
+    }
+
+    /**
+     * 处理菜单点击事件
+     *
+     * @param item
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_option_save:
+                Toast.makeText(this, "点击了保存按钮", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
